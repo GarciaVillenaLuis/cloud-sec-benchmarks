@@ -1,0 +1,41 @@
+{
+  "environment": "Production-MultiCloud",
+  "audit_scope": ["AWS-641238912301", "AZURE-sub-corp-01"],
+  "aws": {
+    "iam": {
+      "root_account_mfa_enabled": true,
+      "password_policy": {
+        "minimum_password_length": 16,
+        "require_symbols": true
+      }
+    },
+    "cloudtrail": {
+      "is_multi_region_trail": true,
+      "kms_key_id": "arn:aws:kms:eu-west-1:123456789012:key/cmk-audit-trail"
+    },
+    "s3": {
+      "account_public_access_block_enabled": true
+    },
+    "vpc": {
+      "open_admin_ports_detected": false
+    }
+  },
+  "azure": {
+    "entra_id": {
+      "admin_mfa_enforced": true
+    },
+    "defender": {
+      "standard_tier_enabled": true
+    },
+    "network": {
+      "open_ssh_rdp_inbound": false
+    },
+    "key_vault": {
+      "diagnostic_logs_enabled": true
+    },
+    "storage": {
+      "supports_https_traffic_only": true,
+      "minimum_tls_version": "TLS1_2"
+    }
+  }
+}
