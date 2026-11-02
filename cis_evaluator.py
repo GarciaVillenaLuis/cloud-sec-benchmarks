@@ -276,6 +276,12 @@ def get_default_sample_inventory() -> Dict[str, Any]:
 
 
 def main() -> None:
+    try:
+        if hasattr(sys.stdout, "reconfigure"):
+            sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
     parser = argparse.ArgumentParser(
         description="CIS Benchmarks Multi-Cloud Posture Evaluator (AWS & Microsoft Azure)",
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -317,7 +323,7 @@ Examples:
                 "Standards Evaluated:"
             ]
             for std in matrix_result["standards_evaluated"]:
-                lines.append(f"  • {std['framework']} ({std['version']}): {std['compliance_rate']} - {std['status']}")
+                lines.append(f"  - {std['framework']} ({std['version']}): {std['compliance_rate']} - {std['status']}")
             lines.append("===========================================================")
             out_str = "\n".join(lines)
 
@@ -338,14 +344,17 @@ Examples:
     if args.cloud != "ALL":
         checks = [c for c in checks if c.cloud_provider.upper() == args.cloud.upper()]
 
+    passed_count = sum(1 for c in checks if c.status == "PASS")
+    total_count = len(checks)
+    compliance_score = round((passed_count / total_count * 100), 2) if total_count > 0 else 100.0
     failed_criticals = [c for c in checks if c.severity == "CRITICAL" and c.status == "FAIL"]
 
     if args.format == "json":
         report_data = {
             "timestamp_utc": datetime.now(timezone.utc).isoformat(),
-            "compliance_score": evaluator.compliance_score,
+            "compliance_score": compliance_score,
             "total_checks": len(checks),
-            "passed_checks": sum(1 for c in checks if c.status == "PASS"),
+            "passed_checks": passed_count,
             "failed_checks": sum(1 for c in checks if c.status == "FAIL"),
             "critical_failures": len(failed_criticals),
             "checks": [asdict(c) for c in checks]
@@ -357,9 +366,9 @@ Examples:
             "==========================================================================",
             "   CIS BENCHMARKS CSPM POSTURE EVALUATION REPORT",
             "==========================================================================",
-            f"Overall Compliance Score: {evaluator.compliance_score}%",
+            f"Overall Compliance Score: {compliance_score}%",
             f"Total Controls Tested:    {len(checks)}",
-            f"Passed Controls:          {sum(1 for c in checks if c.status == 'PASS')}",
+            f"Passed Controls:          {passed_count}",
             f"Failed Controls:          {sum(1 for c in checks if c.status == 'FAIL')} (Critical Failures: {len(failed_criticals)})",
             "--------------------------------------------------------------------------",
             table_str
