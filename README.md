@@ -1,5 +1,6 @@
 # Cloud Security Benchmarks ☁️
 
+[![CI/CD Pipeline](https://github.com/GarciaVillenaLuis/cloud-sec-benchmarks/actions/workflows/ci.yml/badge.svg)](https://github.com/GarciaVillenaLuis/cloud-sec-benchmarks/actions/workflows/ci.yml)
 [![CSPM Compliance](https://img.shields.io/badge/CSPM%20Compliance-98.2%25%20PASS-brightgreen?style=flat-square&logo=amazonwebservices&logoColor=white)](https://github.com/GarciaVillenaLuis/cloud-sec-benchmarks)
 [![Standards](https://img.shields.io/badge/Benchmark-CIS%20AWS%20v3.0%20%7C%20Azure%20v2.1-blue?style=flat-square&logo=microsoftazure&logoColor=white)](https://www.cisecurity.org/cis-benchmarks)
 [![Python Version](https://img.shields.io/badge/Python-3.9%2B-blue?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
