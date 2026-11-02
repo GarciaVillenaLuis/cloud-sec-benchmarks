@@ -55,6 +55,17 @@ class TestCISEvaluator(unittest.TestCase):
         self.assertIn("CIS-AWS-1.4", out)
         self.assertIn("CIS-AZ-1.1", out)
         self.assertIn("PASS", out)
+        self.assertTrue(out.encode("ascii", errors="strict"))
+
+    def test_scoped_cloud_compliance_calculation(self):
+        inv = json.loads(json.dumps(self.sample_inv))
+        inv["aws"]["iam"]["root_account_mfa_enabled"] = False  # 1 fail out of 5 AWS = 80%
+        checks = self.evaluator.evaluate_configuration(inv)
+        aws_checks = [c for c in checks if c.cloud_provider == "AWS"]
+        passed = sum(1 for c in aws_checks if c.status == "PASS")
+        total = len(aws_checks)
+        aws_score = round(passed / total * 100, 2)
+        self.assertEqual(aws_score, 80.0)
 
 
 if __name__ == "__main__":
