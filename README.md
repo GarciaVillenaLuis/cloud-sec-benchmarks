@@ -110,3 +110,8 @@ python -m unittest tests/test_cis_evaluator.py
 
 Continuous posture records and compliance scores are updated in:
 - [`benchmarks/cloud_cis_matrix.json`](./benchmarks/cloud_cis_matrix.json)
+
+
+## 🔒 Security Governance & CodeQL SAST Baseline
+
+This repository enforces continuous semantic code analysis via official **GitHub CodeQL** and automated zero-vulnerability security baselines for all multi-cloud governance modules.
