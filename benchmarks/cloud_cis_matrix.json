@@ -1,5 +1,5 @@
 {
-  "last_audit_utc": "2026-11-01T07:30:17.567Z",
+  "last_audit_utc": "2026-11-10T08:30:15Z",
   "engine_version": "2.4.1",
   "standards": [
     {
@@ -18,5 +18,8 @@
     }
   ],
   "cspm_posture_score": 98,
-  "integrity_hash": "SHA256:aEqWcqyMYnZbdnCDklz2t7g3Q76kjLFnMpsjg8/Rs2w="
+  "integrity_hash": "SHA256:aEqWcqyMYnZbdnCDklz2t7g3Q76kjLFnMpsjg8/Rs2w=",
+  "last_sync_utc": "2026-11-10T08:30:15Z",
+  "last_assessment_utc": "2026-11-10T08:30:15Z",
+  "verified_date": "2026-11-10"
 }
