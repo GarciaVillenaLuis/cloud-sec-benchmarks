@@ -1,5 +1,5 @@
 {
-  "last_audit_utc": "2026-11-18T07:30:15.675Z",
+  "last_audit_utc": "2026-11-21T07:30:15.236Z",
   "engine_version": "2.4.1",
   "standards": [
     {
@@ -13,10 +13,10 @@
       "framework": "CIS Microsoft Azure Foundations Benchmark",
       "version": "v2.1.0",
       "controls_evaluated": 78,
-      "compliance_rate": "97.2%",
+      "compliance_rate": "97.7%",
       "status": "COMPLIANT"
     }
   ],
   "cspm_posture_score": 98,
-  "integrity_hash": "SHA256:3cgXK1/Vb+vn2o5/1JXQLqHZRV7DKG12ZOc100J4qOg="
+  "integrity_hash": "SHA256:NGT7LAAdRMcy6Nv1gzybBtoZ8qajE1eecAxTv11YiSY="
 }
