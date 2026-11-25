@@ -18,5 +18,7 @@
     }
   ],
   "cspm_posture_score": 98,
-  "integrity_hash": "SHA256:NGT7LAAdRMcy6Nv1gzybBtoZ8qajE1eecAxTv11YiSY="
+  "integrity_hash": "SHA256:NGT7LAAdRMcy6Nv1gzybBtoZ8qajE1eecAxTv11YiSY=",
+  "last_sync_utc": "2026-11-25T11:15:00Z",
+  "telemetry_seq": 1
 }
