@@ -1,22 +1,22 @@
 {
-  "last_audit_utc": "2026-11-27T07:30:28.160Z",
+  "last_audit_utc": "2026-11-27T07:30:48.662Z",
   "engine_version": "2.4.1",
   "standards": [
     {
       "framework": "CIS Amazon Web Services Foundations Benchmark",
       "version": "v3.0.0",
       "controls_evaluated": 64,
-      "compliance_rate": "98.5%",
+      "compliance_rate": "98.7%",
       "status": "COMPLIANT"
     },
     {
       "framework": "CIS Microsoft Azure Foundations Benchmark",
       "version": "v2.1.0",
       "controls_evaluated": 78,
-      "compliance_rate": "97.7%",
+      "compliance_rate": "97.3%",
       "status": "COMPLIANT"
     }
   ],
   "cspm_posture_score": 98,
-  "integrity_hash": "SHA256:SrHFwE02l2uyPPsvVnQPB6ugqtLaXEtXp+XK67QU9Yo="
+  "integrity_hash": "SHA256:qY1IiDfvG8F4SX+aqHwJsx8kpIv//8+SoYPmerQMM/0="
 }
