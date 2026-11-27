@@ -1,12 +1,12 @@
 {
-  "last_audit_utc": "2026-11-27T07:30:48.662Z",
+  "last_audit_utc": "2026-11-27T07:31:09.964Z",
   "engine_version": "2.4.1",
   "standards": [
     {
       "framework": "CIS Amazon Web Services Foundations Benchmark",
       "version": "v3.0.0",
       "controls_evaluated": 64,
-      "compliance_rate": "98.7%",
+      "compliance_rate": "98.5%",
       "status": "COMPLIANT"
     },
     {
@@ -18,5 +18,5 @@
     }
   ],
   "cspm_posture_score": 98,
-  "integrity_hash": "SHA256:qY1IiDfvG8F4SX+aqHwJsx8kpIv//8+SoYPmerQMM/0="
+  "integrity_hash": "SHA256:hLUdKu3EKCC4dtLDBGCZ3SohKHBEC1Ti52NQj9qiwmo="
 }
